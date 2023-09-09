@@ -19,7 +19,7 @@ def main():
 
 
 def extrair_dados():
-    df = pd.read_csv("SDW-ETL/usuarios.csv")
+    df = pd.read_csv("usuarios.csv")
     users = df['User'].tolist()
     return users
 
@@ -36,7 +36,7 @@ def transformar_dados(nome):
 
 def pegar_sobrenomes():
     carregar_sobrenomes()
-    df = pd.read_csv("SDW-ETL/sobrenomes.csv")
+    df = pd.read_csv("sobrenomes.csv")
     sobrenomes = df['Sobrenome'].tolist()
     return sobrenomes
 
@@ -48,14 +48,14 @@ def carregar_sobrenomes():
                   "Dias", "Fernandes", "Sales", "Gomes", "Cardoso", "Ramos", "Teixeira", "Castro", "Monteiro", "Coelho", "Sousa", "Cavalcanti", "Leal", "Correia", "Cruz", "Dantas", "Campos", "Lopes", "Nunes", "Morais", "Lima", "Correia", "Pinto", "Borges", "Vieira"]
 
     df = pd.DataFrame({"Sobrenome": sobrenomes})
-    df.to_csv("SDW-ETL/sobrenomes.csv", index=False)
+    df.to_csv("sobrenomes.csv", index=False)
 
 # Função para salvar os dados transformados em CSV
 
 
 def salvar_dados(dados):
     df = pd.DataFrame(dados)
-    df.to_csv("SDW-ETL/dados-alterados.csv", index=False)
+    df.to_csv("dados-alterados.csv", index=False)
 
 
 if __name__ == "__main__":
